@@ -1,0 +1,36 @@
+.todo-item {
+    border: 2px solid white;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.todo-item-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.todo-item-title {
+    margin-bottom: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.completed {
+    border-color: #d0ffd0;
+}
+
+.completed .todo-item-title {
+    text-decoration: line-through;
+}
+
+.todo-item-time {
+    margin: 0;
+    font-size: 12px;
+    font-style: italic;
+}
+
+.todo-item-checkbox {
+    width: 25px;
+    height: 25px;
+}

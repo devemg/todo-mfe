@@ -1,0 +1,17 @@
+{
+    "name": "@repo/events",
+    "version": "0.0.0",
+    "private": true,
+    "license": "MIT",
+    "scripts": {
+      "build": "tsc",
+      "dev": "tsc --watch"
+    },
+    "exports": {
+      ".": "./dist/index.js"
+    },
+    "dependencies": {
+      "typescript": "^5.3.3",
+      "@repo/definitions": "*"
+    }
+  }

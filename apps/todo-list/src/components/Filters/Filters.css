@@ -1,0 +1,14 @@
+.filters {
+    display: flex;
+    gap: 1rem;
+}
+
+.filters li {
+    display: flex;
+    padding: 1rem 1rem 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.selected {
+    border-bottom: 2px solid #FFF;
+}
