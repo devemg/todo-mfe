@@ -70,13 +70,17 @@ This Turborepo has some additional tools already setup for you:
 - [ESLint](https://eslint.org/) for code linting
 - [Prettier](https://prettier.io) for code formatting
 
-### Build
+### Test
 
-To build all apps and packages, run the following command:
+To run all apps and packages test cases, run the following command:
 
 ```
-cd my-turborepo
-pnpm build
+yarn test
+```
+
+or even better
+```
+yarn test:coverage
 ```
 
 ### Develop
