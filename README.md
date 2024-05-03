@@ -1,28 +1,66 @@
-# Turborepo starter
+# MFE Todo Application
 
-This is an official starter Turborepo.
+The solution for this assesment consider as core two remote applications: **todo-create** and **todo-list**, crafted to streamline task management processes.
 
-## Using this example
+**todo-create** stands as the gateway for users to initiate new tasks with utmost ease. Through its intuitive interface, users navigate seamlessly, crafting to-do items effortlessly.
 
-Run the following command:
+On the other hand, **todo-list** provides users with a comprehensive overview of their pending tasks. With seamless integration into the application ecosystem, users efficiently manage their to-do lists and monitor progress. This remote app serves as a centralized hub for task management, fostering a cohesive user experience.
 
-```sh
-npx create-turbo@latest
+Central to the proposed solution is an event-driven architecture, facilitating seamless communication between the main application and its remote counterparts. Through orchestrated events, the application ensures real-time updates and maintains consistency across all modules.
+
+In summary, the proposed MFE application represents a forward-thinking solution. Through modular scalability, intuitive design, and efficient communication offers the posibility to keep adding popular and useful fuctionalities.
+
+  ![Diagram 1](./diagram-1.png)
+
+
+As a developer, I care about creating and maintaining projects with good practices and easy to understand structures for other developers interested in read or use my code.
+Using monorepos and libraries in this kind of projects allows me to keep my code well organized. Here you can find the package diagram for my proposed solution.
+
+![Diagram 2](./diagram-2.png)
+
+### Events package
+
+It wraps the dispatch and listener events based on the window API. Having this wrapper allows me to update the methods without affecting the remote and host apps. The best example i can mention to you is...what if i want to run my application with SSR? 
+Well, the window variable will not be available, so I have to find a different way to emit and listen to events.
+I would make that change directly in the library and not have to go to the final applications to make changes unless strictly necessary.
+
+### Definitions Package
+My definition package is nothing more than that. The interfaces and enums you need, will be in one place, facilitating the propagation of changes, avoiding duplicate code and errors at development time.
+
+
+## How to run?
+
+
+1.  From root, install the dependencies running 
+```
+yarn install
 ```
 
-## What's inside?
+1.  From root, build the dependencies 
+```
+yarn build
+```
 
-This Turborepo includes the following packages/apps:
+1. Go to `apps/todo-list` and run
+```
+yarn start
+```
 
-### Apps and Packages
+2. Go to `apps/todo-create` and run
+```
+yarn start
+```
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+3. Go to `apps/host` and run
+```
+yarn start
+```
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+You can see the apps running in your localhost.
+
+- Todo Create: http://localhost:3001
+- Todo List: http://localhost:3002
+- Host app: http://localhost:300
 
 ### Utilities
 
